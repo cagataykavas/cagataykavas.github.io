@@ -1,6 +1,11 @@
 const year = document.getElementById("year");
 if (year) year.textContent = new Date().getFullYear();
 
+// Keep every CV entry point attached to the current recruiter-facing CV.
+document.querySelectorAll('a[href="Cagatay Kavas CV.pdf"]').forEach((link) => {
+  link.setAttribute("href", "cv.html");
+});
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
