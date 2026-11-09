@@ -28,6 +28,8 @@ if (menuToggle && navigation) {
   });
 }
 
+
+if ("IntersectionObserver" in window) {
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
@@ -40,7 +42,6 @@ const observer = new IntersectionObserver(
   { threshold: 0.12, rootMargin: "0px 0px -35px 0px" }
 );
 
-if ("IntersectionObserver" in window) {
   document.querySelectorAll(".reveal").forEach((element, index) => {
     element.style.transitionDelay = `${Math.min(index % 4, 3) * 45}ms`;
     observer.observe(element);
@@ -67,3 +68,6 @@ if (sections.length && navigationLinks.length && "IntersectionObserver" in windo
   );
   sections.forEach((section) => sectionObserver.observe(section));
 }
+
+
+window.addEventListener("resize", () => { if (window.innerWidth > 980) closeNavigation(); });

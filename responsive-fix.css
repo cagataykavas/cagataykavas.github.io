@@ -24,3 +24,6 @@
     padding-top: 24px;
   }
 }
+
+
+.project-card{min-height:0;gap:8px}.project-card .project-link{margin-top:auto;padding-top:20px}.project-card h3{overflow-wrap:anywhere}.project-topline{gap:16px}.metric-band strong{font-size:clamp(23px,2.5vw,31px)}
